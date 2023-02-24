@@ -10,6 +10,11 @@ pipeline {
 	           steps {
 			  sh '/home/pallavi/Documents/GRRAS/apache-maven-3.8.7/bin/mvn install'
 	                 }}
+		post {
+		
+			success{
+				mail bcc: 'pallaviseo06@gmail.com', body: 'hi im from jenkins file', cc: 'pallaviseo06@gmail.com', from: '', replyTo: '', subject: 'project alert', to: 'pallaviseo06@gmail.com'
+				}
 		stage('Deployment'){
 		    steps {
 			
